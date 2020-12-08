@@ -1,0 +1,5 @@
+/.vscode
+*.csv
+*.pkl
+*.json
+/.ipynb_checkpoints
