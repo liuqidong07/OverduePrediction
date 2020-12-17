@@ -21,7 +21,7 @@ def submit(res):
     subimt_csv = pd.read_csv(r'./data/submit.csv')
     subimt_csv['label'] = res
     time_path = time.strftime("%Y%m%d%H%M", time.localtime()) + '.csv'
-    subimt_csv.to_csv('../submission/' + time_path, index=False)
+    subimt_csv.to_csv('./submission/' + time_path, index=False)
     
 
 def evaluation(y_true, y_predict):
