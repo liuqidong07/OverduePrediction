@@ -12,16 +12,16 @@ import pandas as pd
 import numpy as np
 import time
 
-def submit(res):
+def submit(res, tpr):
     '''
     按照要求的格式输出结果表格
     输入: 模型预测结果. 注意数据类型为浮点型, 表示逾期的概率.
     输出: 将提交文件存在/submission/文件夹下
     '''
-    subimt_csv = pd.read_csv(r'./data/submit.csv')
-    subimt_csv['label'] = res
-    time_path = time.strftime("%Y%m%d%H%M", time.localtime()) + '.csv'
-    subimt_csv.to_csv('./submission/' + time_path, index=False)
+    submit_csv = pd.read_csv(r'./data/submit.csv')
+    submit_csv['label'] = res
+    time_path = time.strftime("%m%d%H", time.localtime())
+    submit_csv.to_csv('./submission/' + time_path + '-' + str(tpr) + '.csv', index=False)
     
 
 def evaluation(y_true, y_predict):
